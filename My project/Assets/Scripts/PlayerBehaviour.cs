@@ -5,18 +5,16 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerBehaviour : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
     public float speed;
     public int health;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        health = 4;
-        speed = 10;
+
     }
 
     // Update is called once per frame
@@ -27,13 +25,13 @@ public class PlayerBehaviour : MonoBehaviour
         var y = Input.GetAxis("Vertical") * speed;
 
         var rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-
-            rb.velocity = new Vector2(x, y);
+        if (rb != null) { 
+        
+        rb.velocity = new Vector2(x, y);
 
         }
 
-
+        
     }
+
 }
